@@ -8,4 +8,6 @@ export interface User {
     state: string;
   }
   hasKids: boolean
+  image?: string
+  isActive?: boolean
 }
