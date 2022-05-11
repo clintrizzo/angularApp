@@ -6,62 +6,54 @@ import { User } from '../../models/User'
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
-
   users!: User[];
-
-  constructor() { }
+  showExtended: boolean = false;
+  loaded: boolean = false;
+  constructor() { };
 
   ngOnInit() {
-    this.users = [
-      {
-        firstName: 'John',
-        lastName: 'Doe',
-        age: 30,
-        address: {
-          street: '123 north street',
-          city: 'Corona',
-          state: 'CA'
+    setTimeout(() => {
+      this.users = [
+        {
+          firstName: 'John',
+          lastName: 'Doe',
+          age: 30,
+          address: {
+            street: '123 north street',
+            city: 'Corona',
+            state: 'CA'
+          },
+          hasKids: true
         },
-        hasKids: true
-      },
-      {
-        firstName: 'Kevin',
-        lastName: 'Johnson',
-        age: 34,
-        address: {
-          street: '456 south street',
-          city: 'Corona',
-          state: 'CA'
+        {
+          firstName: 'Kevin',
+          lastName: 'Johnson',
+          age: 34,
+          address: {
+            street: '456 south street',
+            city: 'Corona',
+            state: 'CA'
+          },
+          hasKids: true
         },
-        hasKids: true
-      },
-      {
-        firstName: 'Karen',
-        lastName: 'Williams',
-        age: 26,
-        address: {
-          street: '789 east street',
-          city: 'Corona',
-          state: 'CA'
+        {
+          firstName: 'Karen',
+          lastName: 'Williams',
+          age: 26,
+          address: {
+            street: '789 east street',
+            city: 'Corona',
+            state: 'CA'
+          },
+          hasKids: false
         },
-        hasKids: false
-      },
-    ]
-  
-    this.addUser({
-      firstName: 'David',
-      lastName: 'Billy',
-      age: 49,
-      address: {
-        street: '012 west street',
-        city: 'Corona',
-        state: 'CA'
-      },
-      hasKids: true
-    });
-  }
+      ];
+      this.loaded = true;
+      this.showExtended = true;
+    }, 2000)
+  };
 
   addUser(user: User) {
     this.users.push(user)
-  }
-}
+  };
+};
