@@ -10,7 +10,6 @@ export class UsersComponent implements OnInit {
   showExtended: boolean = false;
   loaded: boolean = false;
   enableAdd: boolean = true;
-  currentClasses = {};
 
   constructor() { };
 
@@ -27,8 +26,8 @@ export class UsersComponent implements OnInit {
             state: 'CA'
           },
           hasKids: true,
-          image: 'https://source.unsplash.com/random/600x600/?img=1',
-          isActive: true
+          isActive: true,
+          registered: new Date('01/02/2022 08:30:00')
         },
         {
           firstName: 'Kevin',
@@ -40,9 +39,8 @@ export class UsersComponent implements OnInit {
             state: 'CA'
           },
           hasKids: true,
-          image: 'https://source.unsplash.com/random/600x600/?portrait',
-          isActive: false
-
+          isActive: false,
+          registered: new Date('03/11/2020 06:20:00')
         },
         {
           firstName: 'Karen',
@@ -54,19 +52,15 @@ export class UsersComponent implements OnInit {
             state: 'CA'
           },
           hasKids: false,
-          image: 'https://source.unsplash.com/random/600x600/?img=2',
-          isActive: true
+          isActive: true,
+          registered: new Date('11/02/2016 11:30:00')
         },
       ];
       this.loaded = true;
       this.showExtended = true;
-      this.setCurrentClasses()
     }, 2000);
   };
-  setCurrentClasses() {
-    this.currentClasses = {
-      'btn-success': this.enableAdd,
-      'big-text': this.showExtended
-    };
-  };
+  fireEvent() {
+    console.log(type)
+  }
 };
