@@ -20,12 +20,6 @@ export class UsersComponent implements OnInit {
           firstName: 'John',
           lastName: 'Doe',
           age: 30,
-          address: {
-            street: '123 north street',
-            city: 'Corona',
-            state: 'CA'
-          },
-          hasKids: true,
           isActive: true,
           registered: new Date('01/02/2022 08:30:00')
         },
@@ -33,25 +27,14 @@ export class UsersComponent implements OnInit {
           firstName: 'Kevin',
           lastName: 'Johnson',
           age: 34,
-          address: {
-            street: '456 south street',
-            city: 'Corona',
-            state: 'CA'
-          },
-          hasKids: true,
-          isActive: false,
+          isActive: true,
           registered: new Date('03/11/2020 06:20:00')
         },
         {
           firstName: 'Karen',
           lastName: 'Williams',
           age: 26,
-          address: {
-            street: '789 east street',
-            city: 'Corona',
-            state: 'CA'
-          },
-          hasKids: false,
+
           isActive: true,
           registered: new Date('11/02/2016 11:30:00')
         },
@@ -60,7 +43,8 @@ export class UsersComponent implements OnInit {
       this.showExtended = true;
     }, 2000);
   };
-  fireEvent() {
-    console.log(type)
+
+  addUser(user: User) {
+    this.users.push(user);
   }
 };

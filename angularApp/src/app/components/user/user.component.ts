@@ -20,12 +20,6 @@ export class UserComponent implements OnInit {
       firstName: 'John',
       lastName: 'Doe',
       age: 30,
-      address: {
-        street: '123 north street',
-        city: 'Corona',
-        state: 'CA'
-      },
-      hasKids: true
     };
   }
 };

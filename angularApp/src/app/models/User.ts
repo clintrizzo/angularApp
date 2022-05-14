@@ -1,13 +1,7 @@
 export interface User {
-  firstName: string,
-  lastName: string,
+  firstName?: string,
+  lastName?: string,
   age?: number,
-  address: {
-    street: string,
-    city: string,
-    state: string
-  },
-  hasKids: boolean,
   isActive?: boolean,
   registered?: any
 }
